@@ -1,0 +1,79 @@
+body{
+    margin: auto;
+    width: 70%;
+    font-family: 'Arial', 'Arial Black', 'Arial Narrow', 'sans-serif' ;
+    align-items: center;
+    color: #333;
+}
+h1{
+    text-align: center;
+    margin: 16px;
+}
+h2{
+    color: #bada55;
+}
+
+input,label{
+    margin: 5px; 
+    padding: 3px
+}   
+
+label {
+    font-size: 20px;
+    display: inline-block;
+    width: 200px;
+    text-align: left;
+    color: #333;
+  }​
+
+#emailError, #ageError{
+    padding: 3px;
+    margin-top: 10px;
+    color: red;
+    border: 1px solid red;
+    border-radius: 10px;
+    background-color: pink;
+}
+
+#extraArea{
+    display: none;
+}
+
+ul{
+    list-style: none;
+    align-items: center;
+    margin: auto;
+}
+li {
+    margin-left: 10px;
+}
+
+fieldset{
+    display: block;
+    padding: 20px;
+    margin: 20px;
+    border: solid blue 2px;
+    border-radius: 10px;
+    
+}
+
+select:hover{
+    cursor: pointer;
+}
+
+footer{
+    width: 100%;
+    margin: auto;
+    margin-top: 20px;
+    padding-bottom: 10px;
+    text-align: center;
+    background-color: aqua;
+}
+
+.btn{
+    margin: auto;
+    text-align: center;
+    display: block;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}

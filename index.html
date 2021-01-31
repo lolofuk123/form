@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="sk">
+
+
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="js.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+
+    <title>Formulare cvicenie</title> 
+</head>
+
+<body>
+    
+    <header>
+        <h1 class="container">Dotazník</h1>
+    </header>
+
+    <form action="mailto:feistu01@gmail.com" enctype="multipart/form-data" method="POST"  onsubmit="validate()">
+        <input type="hidden" name="from" value="Lukáš Záhumenský">
+        <input type="hidden" name="sender" value="Mr x">
+        <input type="hidden" name="to" value="lolo@lol.com">
+        <input type="hidden" name="subject" value="Form">
+        <input type="hidden" name="redirectOk" value="http://sport.sk">
+        <input type="hidden" name="redirectFalse" value="http://google.sk">
+        <textarea name="myName" id="myName" cols="30" rows="1" style="display: none;">Lukáš Záhumenský</textarea>
+       
+        <fieldset class="container">
+            <h2 class="form-group container">Osobne udaje</h2>
+            <div class="form-group container">
+                <label for="birthday">Dátum narodenia</label>
+                <input type="date" id="birthday" name="birthday" required onblur="checkAge()">
+                <span id="ageError" style="display: none">Vek a dátum narodenia sa nezhodujú</span>
+            </div>
+            <div class="form-group container">
+                <label for="age">Vek</label>
+                    <input type="number" id="age" name="age" required onblur="checkAge()" placeholder="Zadajte vek">
+                
+            </div>
+            <div class="form-group container">
+              <label for="email">Email</label>
+              <input type="email" name="email"  id="email" placeholder="Zadajte email" required onchange="checkMail()">
+              <span id="emailError" style="display: none">Email v nesprávnom formáte alebo chýba email: skontrolujete či nechýba @. Pred @ musia byť aspoň 3 znaky. Mail musí začínať písmenom. Minimálne 2 domény musia byť a vrcholová má 2-4 znaky</span>
+            </div>
+            <div class="form-group container">
+                <label for="country">Zvoľte krajinu</label>
+                <input type="text" id="country" name="country" required onblur="checkCountry(this)">
+            </div>
+        
+        <h5>Pohlavie</h5>
+        <ul id = "gender" class="container">
+            <li><input type="radio" name="gender" value="male" onclick="hide('Tarea')">Muž<li>
+            <li><input type="radio" name="gender" value="female" onclick="hide('Tarea')">Žena</li>
+            <li><input type="radio" id="other" name="gender" value="other" onchange="radioCheck()">Zrejme zviera (uveďte aké)</li>
+        </ul>
+        <textarea name="animal" id="Tarea" cols="30" rows="1" style="display: none;"></textarea>
+    </fieldset>
+
+        <fieldset id="carSelecting" class="container">
+            <h2>Vyberte vami preferované auto</h2>
+            <div class = "form-group">
+                <label for="main_menu">Auto</label>
+                <select name="main_menu" id="main_menu" onchange="populate(this.id, 'sub_menu1')" class="custom-select">
+                    <option value="empty">&nbsp;</option>
+                    <option value="skoda">Škoda</option>
+                    <option value="bmw">BMW</option>
+                </select>
+            </div>
+            <div>
+                <label for="sub_menu1">Model</label>
+                <select name="sub_menu1" id="sub_menu1" onchange="populate(this.id, 'sub_menu2')" class="custom-select"></select>
+            </div>
+            <div>
+                <label for="sub_menu2">Technická špecifikácia</label>
+                <select name="sub_menu2" id="sub_menu2" class="custom-select"></select>
+            </div>
+           
+            <div>
+                <label for="extra">Chcete niečo dodať?</label>
+                <input type="checkbox" id="extra" name="extras">
+                <textarea name="textareaExtra" id="extraArea" cols="30" rows="5" placeholder="Vyjadrite svoje myšlienky"></textarea>
+            </div>
+        </fieldset>
+        
+        <button type="submit" class="btn btn-primary">Submit</button>
+        
+      </form>
+
+      <footer class="container">
+          <div >&copy; Lukáš Záhumenský</div>
+          
+      </footer>
+    
+</body>
+
+</html>
